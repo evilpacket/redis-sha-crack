@@ -11,12 +11,15 @@ if (argv.w && argv.s) {
         master.addServer(host, port);
     });
 
-    repl.start({
-      prompt: "> ",
-      useGlobal: true,
-      input: process.stdin,
-      output: process.stdout,
-    });
+
+    if (argv.r) {
+        repl.start({
+          prompt: "> ",
+          useGlobal: true,
+          input: process.stdin,
+          output: process.stdout,
+        });
+    }
 } else {
     console.log('node redis-sha-crack.js -w wordlist.txt -s shas.txt host1 host2:port');
     process.exit();
