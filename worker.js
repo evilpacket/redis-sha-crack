@@ -1,7 +1,6 @@
 var sys = require('sys'),
     redis = require('redis'),
-    fs = require('fs'),
-    events = require('events');
+    fs = require('fs');
 
 redis.debug_mode = false;
 
