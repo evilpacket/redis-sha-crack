@@ -47,7 +47,7 @@ var Master = exports.Master = function (wordlist, hashes) {
         _.extend(self.found, reply);  // record our successes        
         var hashes = Object.keys(reply); 
         async.forEach(Object.keys(reply), function (item, cb) {
-            console.log("FOUND: " + item + ", " + hashes[item]);
+            console.log("FOUND: " + item + ", " + reply[item]);
             delete self.hashes[item]; // remove found hash
             cb();
         }, callback);
