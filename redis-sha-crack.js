@@ -4,8 +4,12 @@ var Master = require('./master').Master,
 
 if (argv.w && argv.s) {
     master = new Master(argv.w, argv.s);
-    //master.addServer('10.0.1.89', '6379');
-    master.addServer('127.0.0.1', '6379');
+    argv._.forEach(function (server) {
+        server = server.split(':');
+        var port = server[1] || '6379'; 
+        var host = server[0];
+        master.addServer(host, port);
+    });
 
     repl.start({
       prompt: "> ",
@@ -14,6 +18,6 @@ if (argv.w && argv.s) {
       output: process.stdout,
     });
 } else {
-    console.log('node redis-sha-crack.js -w wordlist.txt -s shas.txt');
+    console.log('node redis-sha-crack.js -w wordlist.txt -s shas.txt host1 host2:port');
     process.exit();
 }
