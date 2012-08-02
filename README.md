@@ -1,4 +1,6 @@
-derp-robot
+redis-sha-crack
 ==========
 
-node / redis sha hash cracker
+Simple, distributed sha1 password cracking using redis 2.6 instances.
+
+
