@@ -41,18 +41,10 @@ var Worker = exports.Worker = function (host, port, master) {
 
     self.doWork = function () {
         master.getWork(function (words, hashes) {
-            
             // If we don't get work or something strange, put us on pause.
-            if (words.length <= 0 || hashes.length <= 0) {
+            if (words.length <= 0 || Object.keys(hashes).length <= 0) {
                 self.pause();
             };
-
-            // convert it
-            var h = {};
-            hashes.forEach(function (hash) {
-                h[hash] = 1;
-            });
-            hashes = h;
 
             if (!self.paused) {
                 // Send job

@@ -21,6 +21,15 @@ var Master = exports.Master = function (wordlist, hashes) {
     self.servers = {};
     self.line = 0;
     self.count = 20000;
+
+    var h = {};
+    self.hashes.forEach(function (hash) {
+        if (hash) {
+            h[hash] = 1;
+        }
+    });
+    self.hashes = h;
+
     self.addServer = function (host, port) {
         var worker = new Worker(host, port, self);
         self.servers[worker.id] = worker;
