@@ -4,12 +4,6 @@ var redis = require('redis'),
     fs = require('fs'),
     Worker = require('./worker').Worker;
 
-
-/* Todo:
-    Keep track of how many words we are checking over time
-    
-*/
-
 // Array Remove - By John Resig (MIT Licensed)
 Array.prototype.remove = function(from, to) {
   var rest = this.slice((to || from) + 1 || this.length);
