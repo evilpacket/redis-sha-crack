@@ -1,5 +1,5 @@
 -- Takes in a wordlist, hashlist
--- Returns any cracked hashes or false
+-- Returns any cracked hashes 
 
 local wordlist, hashes = unpack(ARGV);
 wordlist = cjson.decode(wordlist);
