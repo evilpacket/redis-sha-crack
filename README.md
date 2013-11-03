@@ -1,6 +1,8 @@
 redis-sha-crack
 ==========
 
+[![Dependency Status](https://david-dm.org/evilpacket/redis-sha-crack.png)](https://david-dm.org/evilpacket/redis-sha-crack)
+
 Simple, distributed sha1 password cracking using redis 2.6 instances.
 
 Redis is amazingly badass. I love just about everything about it. Redis 2.6 has lua support...and Redis listens on all interfaces by default. (Okay I don't love that....Please don't leave your redis server sitting around on the Internet, please)

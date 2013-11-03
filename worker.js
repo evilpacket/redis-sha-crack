@@ -48,6 +48,7 @@ var Worker = exports.Worker = function (host, port, master) {
 
             if (!self.paused) {
                 // Send job
+                //console.log("sending job: " + self.host);
                 self.client.send_command('EVALSHA', [self.scriptsha, 0, JSON.stringify(words), JSON.stringify(hashes)], function (err, reply) {
                     if (reply) {
                         self.master.hashFound(reply, function () {
